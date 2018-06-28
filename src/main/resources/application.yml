@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql:replication://127.0.0.1:13306,127.0.0.1:23306/db0?characterEncoding=UTF8&useSSL=false
+    username: test
+    password: test
+    hikari:
+      # for SQL debug
+      # TODO According to slow-log, connection-init-sql doesn't seem to be applied on slave
+      connection-init-sql: "SET SESSION sql_mode='TRADITIONAL,NO_AUTO_VALUE_ON_ZERO,ONLY_FULL_GROUP_BY'"
+
+logging:
+  level:
+    info.matsumana.demo: DEBUG
