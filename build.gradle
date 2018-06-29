@@ -27,6 +27,7 @@ compileKotlin {
     kotlinOptions {
         freeCompilerArgs = ["-Xjsr305=strict"]
         jvmTarget = "1.8"
+        javaParameters = true
     }
 }
 compileTestKotlin {
