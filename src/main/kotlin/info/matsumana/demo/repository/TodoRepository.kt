@@ -28,7 +28,7 @@ interface TodoRepository {
 
     // Ambiguous Groups
     @Select("""
-    SELECT MAX(`id`)
+    SELECT MAX(`id`) AS `id`
          , `title`
          , `detail`
          , `finished`
