@@ -10,29 +10,14 @@ import org.apache.ibatis.annotations.Select
 interface TodoRepository {
 
     @Insert("""
-    INSERT INTO `todo`
-    (
-      `title`
-    , `detail`
-    , `finished`
-    )
-    VALUES
-    (
-      #{title}
-    , #{detail}
-    , #{finished}
-    )
+    INSERT INTO `todo`(`title`, `detail`, `finished`) VALUES (#{title}, #{detail}, #{finished})
     """)
     @Options(useGeneratedKeys = true)
     fun insert(todo: Todo)
 
     // Ambiguous Groups
     @Select("""
-    SELECT MAX(`id`) AS `id`
-         , `title`
-         , `detail`
-         , `finished`
-      FROM `todo`
+    SELECT MAX(`id`) AS `id`, `title`, `detail`, `finished` FROM `todo`
     """)
     fun select(): Todo
 }
