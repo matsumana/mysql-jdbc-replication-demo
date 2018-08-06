@@ -5,6 +5,7 @@ spring:
     username: test
     password: test
     hikari:
+      register-mbeans: true
       # for SQL debug
       # TODO According to slow-log, connection-init-sql doesn't seem to be applied on slave
       connection-init-sql: "SET SESSION sql_mode='TRADITIONAL,NO_AUTO_VALUE_ON_ZERO,ONLY_FULL_GROUP_BY'"
