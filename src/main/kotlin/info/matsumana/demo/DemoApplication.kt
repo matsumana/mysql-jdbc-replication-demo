@@ -22,7 +22,9 @@ class DemoApplication {
         service.insert(newTodo)
 
         log.debug("found row from slave  = {}", service.selectFromSlave())
-        log.debug("found row from master = {}", service.selectFromMaster())
+
+        // TODO SQL error occurs when executed on master
+//        log.debug("found row from master = {}", service.selectFromMaster())
     }
 }
 
